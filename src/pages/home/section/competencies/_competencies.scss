@@ -1,0 +1,224 @@
+@import '../../../../sass_library/all';
+
+main.home section.competencies {
+	padding-top: 4vw;
+	padding-bottom: $p-spacing-largest * 2;
+	background: $cp-home-competencies-background;
+	transform: skewY(-3deg);
+	
+	.wrapper {
+		transform: skewY(3deg);
+		
+		h3 {
+			margin-bottom: $p-spacing-large;
+			text-align: center;
+			font-size: $p-font-size-h3;
+			color: $cg-headline-sub-text;
+			
+			@include mq($mq2) { font-size: $p-font-size-major; }
+		}
+		
+		a.button {
+			display: block;
+			box-sizing: border-box;
+			margin: 0 auto $p-spacing-largest;
+			width: 280px;
+			padding: $p-spacing-default;
+			border-radius: $p-spacing-large * 2;
+			background: $cp-home-competencies-button no-repeat left/200%;
+			text-align: center;
+			font-size: $p-font-size-minor;
+			color: $cg-text-dark;
+			transition: background-position $p-transition-time * 2;
+			
+			&:hover { background-position: right; }
+		}
+		
+		> ul {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 265px);
+			grid-gap: $p-spacing-larger $p-spacing-default;
+			justify-content: space-around;
+			margin-top: $p-spacing-larger * 2;
+			
+			> li {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				background: $cp-home-competencies-card-background;
+				box-shadow: 1px 4px 8px transparentize(black, 0.8);
+				border-radius: 12px;
+				padding: $p-spacing-large $p-spacing-default;
+				
+				&[data-name] {
+					cursor: pointer;
+					transition: transform $p-transition-time, box-shadow $p-transition-time;
+					
+					&:hover {
+						transform: translateY(-3px);
+						box-shadow: 1px 7px 9px transparentize(black, 0.8);
+					}
+					
+					button {
+						display: block;
+						box-sizing: border-box;
+						position: absolute;
+						right: $p-spacing-default * 1.5;
+						bottom: $p-spacing-default;
+						width: 26px;
+						height: 26px;
+						border-radius: 100%;
+						background: $cp-home-competencies-card-button;
+						font-size: 18px;
+						cursor: pointer;
+						transition: background-color $p-transition-time, box-shadow $p-transition-time;
+						
+						&:hover {
+							background: lighten($cp-home-competencies-card-button, 10%);
+							box-shadow: inset -1px -2px 4px transparentize(black, 0.85);
+						}
+						
+						&::after {
+							content: '+';
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -55%);
+							color: $cg-text-dark;
+						}
+					}
+				}
+				
+				h4 {
+					margin-bottom: $p-spacing-small;
+					font-size: $p-font-size-h2;
+					text-align: center;
+					
+					@include mq($mq1) { font-size: $p-font-size-h3; }
+					@include mq($mq2) { font-size: $p-font-size-major; }
+				}
+				
+				p {
+					margin-bottom: $p-spacing-large;
+					
+					@include mq($mq2) { font-size: $p-font-size-minor; }
+				}
+				
+				.icon {
+					$icon-size: 170px;
+					
+					width: $icon-size;
+					height: $icon-size;
+					
+					@include mq($mq2) {
+						$icon-size: 130px;
+						
+						width: $icon-size;
+						height: $icon-size;
+					}
+				}
+				&.economy .icon { background: url('assets/icons/3d/transfer.svg') no-repeat center/contain; }
+				&.operation .icon { background: url('assets/icons/3d/route.svg') no-repeat center/contain; }
+				&.organisation .icon { background: url('assets/icons/3d/chain.svg') no-repeat center/contain; }
+				&.sales .icon { background: url('assets/icons/3d/graph.svg') no-repeat center/contain; }
+				&.recruiting .icon { background: url('assets/icons/3d/mining.svg') no-repeat center/contain; }
+				&.cm-iso .icon { background: url('assets/icons/3d/database.svg') no-repeat center/contain; }
+			}
+		}
+	}
+}
+
+body > aside.modals > div {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: $p-spacing-large;
+	opacity: 0;
+	visibility: hidden;
+	background: transparentize($_cp-darkest, 0.35);
+	transition: opacity $p-transition-time, visibility 0s $p-transition-time;
+	
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity $p-transition-time, visibility 0s;
+	}
+	
+	.content {
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		width: 80%;
+		max-width: 650px;
+		max-height: 80vh;
+		overflow: scroll;
+		padding: $p-spacing-large;
+		box-sizing: border-box;
+		border-radius: 12px;
+		transform: translateX(-50%);
+		background: $cp-home-competencies-card-background;
+		
+		h4 {
+			text-align: center;
+			font-size: $p-font-size-major;
+			
+			&::after {
+				content: '';
+				display: block;
+				margin: $p-spacing-small auto;
+				width: 92px;
+				height: 1px;
+				background: $cp-home-competencies-model-divider;
+			}
+		}
+		> p {
+			text-align: center;
+			font-size: $p-font-size-minor;
+			font-style: italic;
+		}
+		
+		> ul {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			grid-gap: $p-spacing-larger $p-spacing-default;
+			justify-content: space-between;
+			margin-top: $p-spacing-larger;
+			
+			li {
+				$icon-size: 35px;
+				
+				position: relative;
+				box-sizing: border-box;
+				padding-left: $icon-size + $p-spacing-default;
+				text-align: left;
+				
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: $icon-size;
+					height: 30px;
+				}
+				
+				$icons: 'abc', 'analysis', 'baseline', 'category', 'changes', 'commercial-management', 'contract', 'cost-dividing', 'cost-minimise', 'economy-level', 'efficiency', 'facility-management', 'identify', 'kpi', 'material', 'negotiation', 'out-in-sourcing', 'performance', 'recruitment', 'resources','surveys', 'workspace';
+				@each $icon in $icons {
+					&[data-icon='#{$icon}']::before { background: url('assets/icons/#{$icon}.svg') no-repeat center/contain; }
+				}
+			}
+		}
+		
+		button.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+			padding: $p-spacing-default ($p-spacing-default * 1.5);
+		}
+	}
+}

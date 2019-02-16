@@ -1,0 +1,91 @@
+@import '../../sass_library/all';
+
+html,
+body {
+	min-width: 320px;
+	-webkit-font-smoothing: antialiased;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.35;
+	letter-spacing: 0.08em;
+	color: $cg-text-light;
+	overflow-x: hidden;
+	
+	main,
+	footer { transition: transform $p-transition-time; }
+	
+	aside.overlay {
+		position: fixed;
+		top: 45px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 500;
+		visibility: hidden;
+		background: transparentize($cg-shadow, 0.6);
+		transition: transform $p-transition-time, visibility 0s;
+	}
+	
+	&.open {
+		main,
+		footer,
+		aside.overlay { transform: translateX(-300px); }
+		
+		aside.overlay { visibility: visible; }
+	}
+	
+	section {
+		position: relative;
+		padding: $p-spacing-larger $p-spacing-large $p-spacing-larger * 2;
+		
+		@include mq($mq2) { padding: $p-spacing-large $p-spacing-default $p-spacing-largest; }
+	}
+	
+	.wrapper {
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 1000px;
+	}
+	
+	main {
+		h2 {
+			margin: $p-spacing-default auto;
+			max-width: 800px;
+			text-align: center;
+			font-size: $p-font-size-title;
+			color: $cg-headline-text;
+			
+			@include mq($mq1) { font-size: $p-font-size-h1; }
+			@include mq($mq2) {
+				max-width: 600px;
+				font-size: $p-font-size-h2;
+			}
+			
+			&::after {
+				content: '';
+				display: block;
+				margin: $p-spacing-large auto $p-spacing-largest;
+				width: 130px;
+				height: 1px;
+				background: $cg-headline-stroke-light;
+				box-shadow: 0 2px 2px transparentize($cg-shadow, 0.65);
+				@include mq($mq2) {
+					margin-bottom: $p-spacing-large;
+					width: 80px;
+				}
+			}
+		}
+		
+		p {
+			margin: 0 auto $p-spacing-larger;
+			max-width: 800px;
+			letter-spacing: 0.03em;
+		}
+	}
+	
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	button { @include reset-button; }
+}

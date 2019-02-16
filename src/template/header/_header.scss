@@ -1,0 +1,152 @@
+@import '../../sass_library/all';
+
+$mq-hidden-menu: 800;
+$header-height: 45px;
+$nav-mobile-width: 300px;
+
+
+body { padding-top: 45px; }
+
+body > header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 500;
+	box-sizing: border-box;
+	margin-bottom: $p-spacing-small;
+	padding: $p-spacing-default;
+	background: $ct-header-background-1;
+	color: $ct-header-text;
+	box-shadow: 0 2px 2px transparentize($cg-shadow, 0.55);
+	transition: background $p-transition-time, color $p-transition-time;
+	
+	&.gradient {
+		background: $ct-header-background-2;
+		color: $cg-text-dark;
+		
+		.wrapper ul li::after { background: $cg-text-dark; }
+		.wrapper .menu,
+		.wrapper .menu::before,
+		.wrapper .menu::after { background: $ct-header-nav-toggle-2; }
+	}
+	
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+		a h1 { // Logo/name
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			
+			span {
+				margin-left: -4px;
+				font-weight: normal;
+			}
+		}
+		
+		nav {
+			@include mq($mq-hidden-menu) {
+				position: fixed;
+				top: $header-height;
+				right: 0;
+				bottom: 0;
+				left: 100%;
+				background: $ct-header-background-1;
+				box-shadow: inset 2px 0 4px transparentize($cg-shadow, 0.72);
+				color: $ct-header-text;
+				transition: left $p-transition-time;
+			}
+			
+			ul {
+				display: flex;
+				align-items: center;
+				font-size: $p-font-size-minor;
+				
+				@include mq($mq-hidden-menu) {
+					flex-direction: column;
+					align-items: flex-start;
+					font-size: $p-font-size-major;
+				}
+				
+				li {
+					position: relative;
+					margin-left: $p-spacing-large;
+					cursor: pointer;
+					
+					@include mq($mq-hidden-menu) {
+						margin: 0;
+						width: 100%;
+						border-bottom: 1px solid transparentize($ct-header-text, 0.6);
+						text-align: center;
+						
+						a {
+							display: block;
+							width: 100%;
+							height: 100%;
+							box-sizing: border-box;
+							padding: $p-spacing-large $p-spacing-default;
+							white-space: nowrap;
+						}
+					}
+					
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: -5px;
+						width: 100%;
+						height: 1px;
+						left: 50%;
+						background: $ct-header-text;
+						transform: translateX(-50%) scaleX(0);
+						transition: transform $p-transition-time;
+					}
+					
+					&:hover {
+						&::after { transform: translateX(-50%) scaleX(1); }
+					}
+				}
+			}
+		}
+		
+		.menu {
+			display: none;
+			
+			@include mq($mq-hidden-menu) {
+				$bar-height: 3px;
+				
+				position: relative;
+				
+				&,
+				&::before,
+				&::after {
+					display: block;
+					width: 25px;
+					height: $bar-height;
+					border-radius: $bar-height;
+					background: $ct-header-nav-toggle-1;
+					transition: transform $p-transition-time;
+				}
+				
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+				}
+				
+				&::before { top: -$bar-height * 3; }
+				&::after { bottom: -$bar-height * 3; }
+			}
+		}
+	} 
+}
+
+
+body.open > header {
+	nav { left: calc(100% - #{$nav-mobile-width}); }
+	
+	.menu::before { transform: scaleX(1.2) rotate(-39deg); }
+	.menu::after { transform: scaleX(1.2) rotate(39deg); }
+}

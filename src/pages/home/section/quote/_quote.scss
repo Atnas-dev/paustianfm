@@ -1,0 +1,65 @@
+@import '../../../../sass_library/all';
+
+main.home section.quote {
+	position: relative;
+	padding-top: $p-spacing-larger * 2;
+	padding-bottom: $p-spacing-largest * 2;
+	background: transparent;
+	text-align: center;
+	color: $cg-text-dark;
+	transform: skewY(-3deg);
+	
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+	&::before {
+		background: $cp-home-quote-background;
+		box-shadow: inset 0 1px 6px transparentize($cg-shadow, 0.4);
+	}
+	&::after {
+		background: url('assets/patterns/splash.png') center/cover;
+		opacity: 0.08;
+	}
+	
+	.wrapper {
+		transform: skewY(3deg);
+		text-shadow: -1px 2px 4px transparentize($cg-shadow, 0.74);
+		
+		h2 {
+			font-size: $p-font-size-h2;
+			color: $cg-text-dark;
+			
+			@include mq($mq2) { font-size: $p-font-size-h3; }
+			@include mq($mq3) { font-size: $p-font-size-major; }
+			
+			&::after {
+				width: 75px;
+				background: $cg-headline-stroke-dark;
+			}
+		}
+		
+		blockquote {
+			margin: 0 auto;
+			max-width: 650px;
+			font-size: $p-font-size-h1;
+			font-style: italic;
+			letter-spacing: 0.08em;
+			
+			@include mq($mq2) { font-size: $p-font-size-h2; }
+			@include mq($mq3) { font-size: $p-font-size-h3; }
+			
+			&::before,
+			&::after {
+				content: '"';
+				margin: 0 -4px;
+			}
+		}
+	}
+}

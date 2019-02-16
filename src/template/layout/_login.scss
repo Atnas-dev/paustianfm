@@ -1,0 +1,50 @@
+@import '../../sass_library/all';
+
+body > aside.login {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	
+	&.false ~ { display: none; }
+	
+	form {
+		fieldset {
+			display: block;
+			
+			label {
+				margin-bottom: $p-spacing-smaller;
+				font-size: $p-font-size-major;
+			}
+			input {
+				display: block;
+				margin-bottom: $p-spacing-large;
+				max-width: 800px;
+				padding: $p-spacing-small $p-spacing-smaller;
+				border-radius: 4px;
+				font-size: $p-font-size-h3;
+			}
+		}
+		button[type=submit] {
+			display: block;
+			margin: 0 auto;
+			width: 80%;
+			padding: $p-spacing-small $p-spacing-smaller;
+			border-radius: 20px;
+			background: $_cp-main;
+			color: $cg-text-dark;
+			text-align: center;
+			cursor: pointer;
+			transition: background $p-transition-time;
+			
+			&:hover { background: $_cp-secondary; }
+		}
+	}
+}

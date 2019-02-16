@@ -1,0 +1,129 @@
+@import '../../../../sass_library/all';
+
+main.home section.banner {
+	$logo-size-big: 350px;
+	$logo-size-medium: 320px;
+	
+	overflow-x: hidden;
+	background: $cp-home-banner-background;
+	color: $cg-text-dark;
+	box-sizing: border-box;
+	margin-bottom: -4vw;
+	min-height: $logo-size-big + $p-spacing-large;
+	padding: ($p-spacing-larger * 2) ($p-spacing-larger * 2) 10vw;
+	
+	@include mq($mq2) {
+		min-height: $logo-size-medium + $p-spacing-large;
+		padding: $p-spacing-largest $p-spacing-large 10vw;
+	}
+	
+	&::after {
+		$triangle-size: 120px;
+		
+		content: '';
+		display: block;
+		position: absolute;
+		top: 45%;
+		left: - $triangle-size / 2;
+		width: $triangle-size;
+		height: $triangle-size;
+		background: $cp-home-banner-detail;
+		box-shadow: 2px 2px 4px transparentize($cg-shadow, 0.35);
+		transform: rotate(45deg);
+		
+		@include mq($mq1) {
+			$triangle-size: 90px;
+			
+			left: - $triangle-size / 2;
+			width: $triangle-size;
+			height: $triangle-size;
+		}
+		@include mq($mq2) { display: none; }
+	}
+	
+	.wrapper {
+		position: relative;
+		z-index: 0;
+		
+		.logo {
+			position: absolute;
+			z-index: -1;
+			top: - $p-spacing-large;
+			right: $p-spacing-large;
+			width: $logo-size-big;
+			height: $logo-size-big;
+			opacity: 0.2;
+			transform: rotate(15deg);
+			
+			@include mq($mq1) {
+				$logo-size: 280px;
+				
+				right: $p-spacing-small;
+				width: $logo-size;
+				height: $logo-size;
+			}
+			@include mq($mq2) {
+				$logo-size: 220px;
+				
+				top: 0;
+				right: - $p-spacing-smaller;
+				width: $logo-size;
+				height: $logo-size;
+			}
+			@include mq($mq3) {
+				$logo-size: 180px;
+				
+				top: $p-spacing-largest;
+				right: - $p-spacing-largest;
+				width: $logo-size;
+				height: $logo-size;
+			}
+		}
+		
+		h2 {
+			display: inline-block;
+			position: relative;
+			margin: $p-spacing-default $p-spacing-large $p-spacing-largest;
+			color: white;
+			text-align: left;
+			font-size: 56px;
+			line-height: 1.1;
+			letter-spacing: 1.25px;
+			
+			@include mq($mq1) { font-size: 48px; }
+			@include mq($mq2) {
+				margin: $p-spacing-default 0 $p-spacing-largest;
+				font-size: 42px;
+			}
+			@include mq($mq3) { margin-bottom: $p-spacing-large; }
+			
+			&::after {
+				position: absolute;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: white;
+				
+				@include mq($mq3) { display: none; }
+			}
+			
+			span { font-weight: bold; }
+		}
+		
+		h3 {
+			margin: $p-spacing-default $p-spacing-large;
+			max-width: 800px;
+			font-size: $p-font-size-title;
+			color: $_cp-brighter;
+			
+			@include mq($mq1) { font-size: $p-font-size-h1; }
+			@include mq($mq2) {
+				margin: $p-spacing-default 0;
+				font-size: $p-font-size-h2;
+			}
+			@include mq($mq3) {
+				max-width: 400px;
+				font-size: $p-font-size-h3;
+			}
+		}
+	}
+}

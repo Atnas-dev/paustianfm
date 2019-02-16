@@ -1,0 +1,179 @@
+@import '../../sass_library/all';
+
+footer {
+	section.contact {
+		position: relative;
+		padding-bottom: $p-spacing-larger ($p-spacing-large * 2) $p-spacing-largest;
+		text-align: center;
+		background: $ct-footer-contact-background;
+		box-shadow: inset 0 1px 3px transparentize($cg-shadow, 0.76);
+		
+		.wrapper {
+			h2 {
+				margin-bottom: $p-spacing-default;
+				color: $ct-footer-contact-heading;
+				text-align: center;
+				font-size: $p-font-size-minor;
+				letter-spacing: 0.25em;
+				
+				@include mq($mq3) { letter-spacing: 0.1em; }
+				
+				&::after {
+					content: '';
+					display: block;
+					margin: $p-spacing-default auto;
+					width: 75px;
+					height: 1px;
+					background: $ct-footer-contact-stroke;
+				}
+				
+				span {
+					display: block;
+					font-size: $p-font-size-title;
+					font-weight: bold;
+					letter-spacing: 0.3em;
+					
+					@include mq($mq1) { font-size: $p-font-size-h1; }
+					@include mq($mq2) { font-size: $p-font-size-h2; }
+				}
+			}
+			
+			p {
+				font-size: $p-font-size-major;
+				
+				@include mq($mq2) { font-size: $p-font-size-base; }
+				@include mq($mq3) { font-size: $p-font-size-minor; }
+			}
+			
+			form {
+				margin: $p-spacing-largest auto 0;
+				width: 100%;
+				max-width: 650px;
+				
+				fieldset {
+					margin-bottom: $p-spacing-default;
+					
+					div.grid {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						grid-column-gap: $p-spacing-large;
+					}
+					
+					.field {
+						label { display: none; }
+						input {
+							box-sizing: border-box;
+							width: 100%;
+							outline: none;
+							border: none;
+							padding: $p-spacing-small $p-spacing-smaller;
+							border-radius: 4px;
+							background: $ct-footer-contact-input;
+							font-size: $p-font-size-major;
+						}
+					}
+				}
+				
+				button[type=submit] {
+					display: block;
+					box-sizing: border-box;
+					margin-top: $p-spacing-default;
+					width: 100%;
+					padding: $p-spacing-default;
+					border-radius: $p-spacing-large * 2;
+					font-size: $p-font-size-major;
+					color: $cg-text-dark;
+					transition: background-position $p-transition-time * 2;
+					background: $ct-footer-contact-button no-repeat left/200%;
+					text-align: center;
+					
+					&:hover { background-position: right; }
+				}
+			}
+			
+			a.button {
+				display: block;
+				box-sizing: border-box;
+				margin: $p-spacing-larger auto 0;
+				width: 280px;
+				padding: $p-spacing-default;
+				border-radius: $p-spacing-large * 2;
+				font-size: $p-font-size-minor;
+				color: $cg-text-dark;
+				transition: background-position $p-transition-time * 2;
+				background: $ct-footer-contact-button no-repeat left/200%;
+				text-align: center;
+				
+				&:hover { background-position: right; }
+			}
+		}
+	}
+	
+	section.info {
+		padding-top: $p-spacing-large;
+		padding-bottom: $p-spacing-large;
+		background: $ct-footer-details-background;
+		font-size: $p-font-size-minor;
+		color: $ct-footer-details-text;
+		
+		@include mq($mq2) { font-size: 12px; }
+		@include mq($mq3) { font-size: 10px; }
+		
+		.wrapper address {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			
+			@include mq($mq3) { flex-direction: column; }
+			
+			> div {
+				display: flex;
+				margin-bottom: $p-spacing-small;
+				
+				h3 {
+					margin-right: $p-spacing-smaller;
+					
+					@include mq($mq3) { display: none; }
+				}
+			}
+			
+			hr {
+				display: block;
+				height: 1em;
+				margin: 0 $p-spacing-default $p-spacing-small;
+				background: $ct-footer-details-text;
+				
+				@include mq($mq3) { transform: rotate(90deg); }
+			}
+		}
+	}
+	
+	section.trailer {
+		padding-top: $p-spacing-large;
+		padding-bottom: $p-spacing-large;
+		background: $_cp-gradient-ltr;
+		color: $cg-text-dark;
+		
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			@include mq($mq2) { flex-direction: column; }
+			
+			h2 {
+				font-weight: bold;
+				letter-spacing: 0.2em;
+				
+				span { font-weight: normal; }
+			}
+			
+			h3 {
+				font-size: $p-font-size-minor;
+				
+				@include mq($mq3) { font-size: 12px; }
+			}
+		}
+	}
+}

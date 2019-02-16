@@ -1,0 +1,9 @@
+$mq1: 1024;
+$mq2: 768;
+$mq3: 500;
+
+@mixin mq($max, $min: 0) {
+	@media (max-width: #{$max}px) and (min-width: #{$min}px) {
+		& { @content }
+	}
+}

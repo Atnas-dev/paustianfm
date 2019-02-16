@@ -1,0 +1,103 @@
+/** Definition of all colors */
+
+/*******************/
+/** Project colors */
+/*******************/
+
+/** Theme **/
+$_cp-main:            hsl(205, 100%, 34%);
+$_cp-secondary-light: hsl(175, 47%, 54%);
+$_cp-secondary:       hsl(184, 76%, 38%);
+$_cp-secondary-dark:  hsl(167, 100%, 21%);
+$_cp-highlight:       hsl(260, 26%, 27%);
+
+
+/** Neutrals **/
+$_cp-brightest: white;
+$_cp-brighter:  hsl(220, 2%, 96%);
+$_cp-bright:    hsl(214, 8%, 88%);
+$_cp-dark:      hsl(217, 7%, 38%);
+$_cp-darker:    hsl(214, 7%, 19%);
+$_cp-darkest:   black;
+
+
+/** Gradients **/
+$_cp-gradient-ltr: linear-gradient(106deg, $_cp-main, $_cp-secondary, $_cp-secondary-dark);
+$_cp-gradient-rtl: linear-gradient(272deg, $_cp-main, $_cp-secondary, $_cp-secondary-dark);
+
+
+
+/******************/
+/** Global colors */
+/******************/
+
+$cg-page-background:       $_cp-brightest;
+
+$cg-shadow:                $_cp-darkest;
+
+$cg-text-dark:             $_cp-brightest;
+$cg-text-light:            hsl(214, 7%, 19%);
+$cg-headline-text:         $_cp-secondary-dark;
+$cg-headline-stroke-light: $_cp-secondary;
+$cg-headline-stroke-dark:  $_cp-brightest;
+$cg-headline-sub-text:     $_cp-darker;
+
+
+
+/********************/
+/** Template colors */
+/********************/
+
+/** Header */
+$ct-header-background-1: linear-gradient(106deg, $_cp-brightest, $_cp-brightest);
+$ct-header-background-2: $_cp-gradient-ltr;
+$ct-header-text:         $_cp-highlight;
+$ct-header-text-hover:   $_cp-secondary-light;
+$ct-header-nav-toggle-1: $_cp-gradient-rtl;
+$ct-header-nav-toggle-2: $cg-text-dark;
+
+
+/** Footer */
+$ct-footer-contact-background: $_cp-brighter;
+$ct-footer-contact-heading:    $_cp-highlight;
+$ct-footer-contact-stroke:     $_cp-highlight;
+$ct-footer-contact-input:      $_cp-brightest;
+$ct-footer-contact-button:     linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);
+
+$ct-footer-details-background: $_cp-darker;
+$ct-footer-details-text:       $_cp-bright;
+
+$ct-footer-trailer-background: $_cp-gradient-ltr;
+
+
+
+/****************/
+/** Page colors */
+/****************/
+
+/** Home page */
+
+/** Banner */
+$cp-home-banner-background: $_cp-gradient-ltr;
+$cp-home-banner-detail:     linear-gradient(118deg, $_cp-brightest, $_cp-brighter);
+
+/** competencies */
+$cp-home-competencies-divider:         $_cp-gradient-rtl;
+$cp-home-competencies-background:      $_cp-brighter;
+$cp-home-competencies-button:          linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);
+$cp-home-competencies-button-hover:    $_cp-secondary-light;
+$cp-home-competencies-card-button:     $_cp-main;
+$cp-home-competencies-card-background: $_cp-brightest;
+$cp-home-competencies-model-divider:   $_cp-secondary-dark;
+
+/** Quote */
+$cp-home-quote-background: $_cp-main;
+
+
+/** Work page */
+$cp-work-models-model-background:    $_cp-brighter;
+$cp-work-models-model-headline:      $_cp-secondary-dark;
+
+$cp-work-models-partners-background: $_cp-brighter;
+$cp-work-models-partners-headline:   $_cp-secondary-dark;
+$cp-work-models-partners-bonus-text: $_cp-dark;
