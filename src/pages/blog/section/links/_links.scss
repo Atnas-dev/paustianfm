@@ -41,6 +41,22 @@ main.blog section.links {
 			
 			&.brochure { background: $cp-work-models-model-background url('assets/brochure.png') no-repeat center 85%/62%;}
 			&.cm-partners { background: $cp-work-models-model-background url('assets/partners/cmp.png') no-repeat center/90%; }
+			&.brochure-workshop {
+				> a p {
+					margin-bottom: $p-spacing-large;
+					text-align: center;
+					font-size: $p-font-size-title;
+					font-weight: bold;
+					background: $_cp-gradient-ltr;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					
+					span {
+						display: block;
+						font-size: $p-font-size-h2;
+					}
+				}
+			}
 			
 			> a {
 				display: flex;
@@ -60,7 +76,6 @@ main.blog section.links {
 					font-size: $p-font-size-minor;
 					text-align: center;
 					
-					@include mq($mq1) { font-size: $p-font-size-h3; }
 					@include mq($mq2) { font-size: $p-font-size-major; }
 				}
 				
