@@ -11,7 +11,7 @@ main.work section.partners {
 		$card-spacing: $p-spacing-large;
 		$card-offset: $card-size + $card-spacing;
 		
-		$number-of-items: 10;
+		$number-of-items: 6;
 		
 		$animation-duration: 4 * $number-of-items;
 		$animation-delay: $animation-duration / $number-of-items;
@@ -50,6 +50,7 @@ main.work section.partners {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: space-between;
 			box-sizing: border-box;
 			width: $card-size;
 			height: $card-size;

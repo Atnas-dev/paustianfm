@@ -2,4 +2,72 @@
 
 main.home section.about {
 	.wrapper { max-width: 800px; }
+	
+	.partners h2 { margin-top: $p-spacing-largest; }
+	
+	ul {
+		$card-size: 270px;
+		
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		box-sizing: content-box;
+		position: relative;
+		padding: $p-spacing-default 0;
+		
+		li {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			box-sizing: border-box;
+			width: $card-size;
+			margin: $p-spacing-default;
+			padding: $p-spacing-default;
+			border-radius: 12px;
+			background: $cg-page-background;
+			text-align: center;
+			box-shadow: -1px 1px 6px transparentize($cg-shadow, 0.8);
+			
+			.graphic {
+				margin-bottom: $p-spacing-small;
+				width: 100%;
+				height: 120px;
+				
+				&.portrait {
+					width: 120px;
+					border-radius: 60px;
+					overflow: hidden;
+					
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						box-shadow: inset 1px 2px 3px transparentize($cg-shadow, 0.6);
+					}
+				}
+				
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+			
+			h3 {
+				margin-bottom: $p-spacing-smaller;
+				font-weight: bold;
+				color: $cp-work-models-partners-headline;
+			}
+			h4 { font-size: $p-font-size-base }
+			
+			p,
+			a {
+				margin-top: $p-spacing-default;
+				margin-bottom: 0;
+				font-size: $p-font-size-minor;
+				color: $cp-work-models-partners-bonus-text;
+			}
+		}
+	}
 }
