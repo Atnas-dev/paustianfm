@@ -47,9 +47,11 @@ main.blog section.links {
 					text-align: center;
 					font-size: $p-font-size-title;
 					font-weight: bold;
-					background: $_cp-gradient-ltr;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
+					color: $_cp-secondary;
+					//background: $_cp-gradient-ltr;
+					//-webkit-background-clip: text;
+					//-webkit-mask-image: $_cp-gradient-ltr;
+					//-webkit-text-fill-color: transparent;
 					
 					span {
 						display: block;
