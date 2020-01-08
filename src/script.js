@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const name = $(event.currentTarget).data('name');
 		
 		if (name) {
-			scrollTo($(`section#${name}`));
+			scrollTo($(`#${name}`));
 			$htmlBody.removeClass('open');
 			
 			return false;

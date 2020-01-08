@@ -4,7 +4,7 @@ main.home section.about {
 	.wrapper { max-width: 800px; }
 	
 	.partners {
-		h2 { margin-top: $p-spacing-largest; }
+		padding-top: $p-spacing-largest;
 		
 		ul {
 			$card-size: 270px;
