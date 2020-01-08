@@ -3,6 +3,13 @@
 main.home section.about {
 	.wrapper { max-width: 800px; }
 	
+	.donations {
+		li span {
+			width: 5em;
+			font-weight: bold;
+		}
+	}
+	
 	.partners {
 		padding-top: $p-spacing-largest;
 		
