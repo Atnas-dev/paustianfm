@@ -11,9 +11,9 @@ main.work section.partners {
 		$card-spacing: $p-spacing-large;
 		$card-offset: $card-size + $card-spacing;
 		
-		$number-of-items: 6;
+		$number-of-items: 5;
 		
-		$animation-duration: 4 * $number-of-items;
+		$animation-duration: 6 * $number-of-items;
 		$animation-delay: $animation-duration / $number-of-items;
 		$offset-limit: -$card-offset;
 		
