@@ -70,6 +70,8 @@ body > header {
 						border-bottom: 1px solid transparentize($ct-header-text, 0.6);
 						text-align: center;
 						
+						&::after { display: none; }
+						
 						a {
 							display: block;
 							width: 100%;
@@ -91,10 +93,7 @@ body > header {
 						transform: translateX(-50%) scaleX(0);
 						transition: transform $p-transition-time;
 					}
-					
-					&:hover {
-						&::after { transform: translateX(-50%) scaleX(1); }
-					}
+					&:hover::after { transform: translateX(-50%) scaleX(1); }
 				}
 			}
 		}
