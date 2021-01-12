@@ -49,12 +49,9 @@ $cg-headline-sub-text:     $_cp-darker;
 /********************/
 
 /** Header */
-$ct-header-background-1: linear-gradient(106deg, $_cp-brightest, $_cp-brightest);
-$ct-header-background-2: $_cp-gradient-ltr;
-$ct-header-text:         $_cp-highlight;
-$ct-header-text-hover:   $_cp-secondary-light;
-$ct-header-nav-toggle-1: $_cp-gradient-rtl;
-$ct-header-nav-toggle-2: $cg-text-dark;
+$ct-header-background: linear-gradient(106deg, $_cp-brightest, $_cp-brightest);
+$ct-header-text:       $_cp-highlight;
+$ct-header-nav-toggle: $_cp-gradient-rtl;
 
 
 /** Footer */

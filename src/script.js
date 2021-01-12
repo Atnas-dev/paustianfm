@@ -1,16 +1,3 @@
-// Header change
-document.addEventListener('DOMContentLoaded', () => {
-	const header = document.querySelector('body header');
-	const sectionTwo = document.querySelector('main.home section.competencies');
-
-	if (sectionTwo) {
-		window.addEventListener("scroll", () => {
-			const shouldGradient = window.scrollY > sectionTwo.offsetTop;
-			header.classList.toggle('gradient', shouldGradient);
-		});
-	}
-});
-
 // Mobile Menu
 document.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body');

@@ -16,20 +16,9 @@ body > header {
 	box-sizing: border-box;
 	margin-bottom: $p-spacing-small;
 	padding: $p-spacing-default;
-	background: $ct-header-background-1;
+	background: $ct-header-background;
 	color: $ct-header-text;
 	box-shadow: 0 2px 2px transparentize($cg-shadow, 0.55);
-	transition: background $p-transition-time, color $p-transition-time;
-	
-	&.gradient {
-		background: $ct-header-background-2;
-		color: $cg-text-dark;
-		
-		.wrapper ul li::after { background: $cg-text-dark; }
-		.wrapper .menu,
-		.wrapper .menu::before,
-		.wrapper .menu::after { background: $ct-header-nav-toggle-2; }
-	}
 	
 	.wrapper {
 		display: flex;
@@ -54,9 +43,8 @@ body > header {
 				right: 0;
 				bottom: 0;
 				left: 100%;
-				background: $ct-header-background-1;
+				background: $ct-header-background;
 				box-shadow: inset 2px 0 4px transparentize($cg-shadow, 0.72);
-				color: $ct-header-text;
 				transition: left $p-transition-time;
 			}
 			
@@ -126,7 +114,7 @@ body > header {
 					width: 25px;
 					height: $bar-height;
 					border-radius: $bar-height;
-					background: $ct-header-nav-toggle-1;
+					background: $ct-header-nav-toggle;
 					transition: transform $p-transition-time;
 				}
 				
