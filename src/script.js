@@ -1,22 +1,22 @@
 // Header change
 document.addEventListener('DOMContentLoaded', () => {
-	const $header = $('body header');
-	const $sectionTwo = $('main.home section.competencies');
-	
-	if ($sectionTwo.length) {
+	const header = document.querySelector('body header');
+	const sectionTwo = document.querySelector('main.home section.competencies');
+
+	if (sectionTwo) {
 		window.addEventListener("scroll", () => {
-			const shouldGradient = window.scrollY > $sectionTwo[0].offsetTop;
-			$header.toggleClass('gradient', shouldGradient);
+			const shouldGradient = window.scrollY > sectionTwo.offsetTop;
+			header.classList.toggle('gradient', shouldGradient);
 		});
 	}
 });
 
 // Mobile Menu
 document.addEventListener('DOMContentLoaded', () => {
-	const $body = $('body');
+	const body = document.querySelector('body');
 	
-	$body.find('header .menu').on('click', () => $body.toggleClass('open'));
-	$body.find('aside.overlay').on('click', () => $body.removeClass('open'));
+	body.querySelector('header .menu').addEventListener('click', () => body.classList.toggle('open'));
+	body.querySelector('aside.overlay').addEventListener('click', () => body.classList.remove('open'));
 });
 
 // Scroll to sections
@@ -25,19 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	const $navs = $('header nav ul a');
 	
 	$navs.on('click', (event) => {
-		const name = $(event.currentTarget).data('name');
+		const name = event.currentTarget.getAttribute('data-name');
 		
 		if (name) {
-			scrollTo($(`#${name}`));
+			scrollTo(document.querySelector(`#${name}`));
 			$htmlBody.removeClass('open');
 			
 			return false;
 		}
 	});
 	
-	function scrollTo($element) {
+	function scrollTo(element) {
 		$htmlBody.animate({
-			scrollTop: $element.offset().top
+			scrollTop: element.offsetTop,
 		}, 500, 'swing');
 	}
 });
@@ -48,18 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	const $modals = $('body > aside.modals div');
 	
 	$competencies.on('click', (event) => {
-		const name = $(event.currentTarget).data('name');
+		const name = event.currentTarget.getAttribute('data-name');
 		
 		$.each($modals, (index, modal) => {
-			const $modal = $(modal);
-			$modal.toggleClass('open', $modal.data('name') === name)
-		})
+			modal.classList.toggle('open', modal.getAttribute('data-name') === name);
+		});
 	});
 	
 	$modals.find('button.close').on('click', () => $modals.removeClass('open'));
-	$('html').on('keydown', (event) => {
+	document.addEventListener('keydown', (event) => {
 		if (event.keyCode === 27) {
 			$modals.removeClass('open');
 		}
-	})
+	});
 });

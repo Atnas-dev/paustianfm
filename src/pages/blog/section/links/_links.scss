@@ -42,27 +42,7 @@ main.blog section.links {
 			&.paustian-consulting { background: $cp-work-models-model-background url('assets/logo.png') no-repeat center 65%/50%; }
 			&.brochure { background: $cp-work-models-model-background url('assets/brochure.png') no-repeat center 85%/62%;}
 			&.pc-final { background: $cp-work-models-model-background url('assets/pc-final.png') no-repeat center 85%/62%;}
-			&.refm { background: $cp-work-models-model-background url('assets/refm.png') no-repeat center 64%/68%;}
-			&.cm-partners { background: $cp-work-models-model-background url('assets/partners/cmp.png') no-repeat center/90%; }
-			&.brochure-workshop {
-				> a p {
-					margin-bottom: $p-spacing-large;
-					text-align: center;
-					font-size: $p-font-size-title;
-					font-weight: bold;
-					color: $_cp-secondary;
-					//background: $_cp-gradient-ltr;
-					//-webkit-background-clip: text;
-					//-webkit-mask-image: $_cp-gradient-ltr;
-					//-webkit-text-fill-color: transparent;
-					
-					span {
-						display: block;
-						font-size: $p-font-size-h2;
-					}
-				}
-			}
-			
+
 			> a {
 				display: flex;
 				flex-direction: column;
