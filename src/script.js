@@ -49,3 +49,106 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
+
+// Benchmark tests
+document.addEventListener('DOMContentLoaded', () => {
+	const testSection = document.querySelector('main.benchmark section.test');
+	if (! testSection) {
+		return;
+	}
+
+    const formTemplate = document.querySelector('template.benchmark-form-mat');
+
+	const fieldsets = testSection.querySelector('.fieldsets');
+    const resultElement = testSection.querySelector('.result span');
+    const ctaElement = testSection.querySelector('.contact');
+
+
+	const prize = {
+		"none":    0,
+		"85x150":  50,
+		"85x300":  120,
+		"115x200": 95,
+		"150x250": 150,
+	};
+	const forms = [];
+	let processTimeout;
+
+	const buttonSubmit = testSection.querySelector('button.submit');
+	buttonSubmit.addEventListener('click', calculateBenchmark);
+
+	const buttonAddForm = testSection.querySelector('button.add-form');
+	buttonAddForm.addEventListener('click', addForm);
+
+
+	addForm();
+
+
+	function addForm() {
+		if (testSection.classList.contains('loading')) {
+			return;
+		}
+
+		const newForm = document.createElement('form');
+		newForm.innerHTML = formTemplate.innerHTML;
+
+        fieldsets.appendChild(newForm);
+
+        newForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            calculateBenchmark();
+        });
+
+        forms.push(newForm);
+	};
+
+
+	function calculateBenchmark(event) {
+		if (testSection.classList.contains('loading')) {
+            return;
+        }
+
+        testSection.classList.add('loading');
+
+		event.preventDefault();
+        event.stopImmediatePropagation();
+
+        if (processTimeout) {
+            clearTimeout(processTimeout)
+        }
+
+		let benchmarkResult = 0;
+        forms.forEach((form) => {
+            const formData = new FormData(form);
+
+            const matCount = formData.get('mat-count');
+            const washCount = formData.get('wash-count');
+            const size = formData.get('size') || 'none';
+
+            benchmarkResult += matCount * washCount * prize[size];
+        });
+
+        if (benchmarkResult === 0) {
+            testSection.classList.remove('loading');
+
+            return;
+        }
+
+        processTimeout = setTimeout(() => {
+            resultElement.classList.remove('empty');
+            ctaElement.classList.remove('hidden');
+
+            resultElement.textContent = numberToString(benchmarkResult)+',-';
+
+            processTimeout = undefined;
+            testSection.classList.remove('loading');
+        }, 2100);
+	};
+
+
+	function numberToString(val) {
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+});

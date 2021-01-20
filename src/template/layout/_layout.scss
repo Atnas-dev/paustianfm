@@ -1,8 +1,12 @@
 @import '../../sass_library/all';
 
-html,
 body {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
 	min-width: 320px;
+	min-height: 100vh;
+	padding-top: 45px;
 	-webkit-font-smoothing: antialiased;
 	font-family: sans-serif;
 	font-size: 16px;
@@ -13,6 +17,8 @@ body {
 	
 	main,
 	footer { transition: transform $p-transition-time; }
+	
+	main { flex: 1 0 auto; }
 	
 	aside.overlay {
 		position: fixed;
