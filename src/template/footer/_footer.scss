@@ -133,8 +133,6 @@ footer {
 				
 				h3 {
 					margin-right: $p-spacing-smaller;
-					
-					@include mq($mq3) { display: none; }
 				}
 			}
 			
