@@ -1,23 +1,6 @@
 @import '../../../../sass_library/all';
 
 main.blog section.links {
-	h1 {
-		margin: $p-spacing-default auto;
-		max-width: 800px;
-		text-align: center;
-		font-size: $p-font-size-title;
-		color: $cg-headline-text;
-		
-		&::after {
-			content: '';
-			display: block;
-			margin: $p-spacing-large auto;
-			width: 130px;
-			height: 1px;
-			background: $cg-headline-stroke-light;
-		}
-	}
-	
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 265px);

@@ -4,23 +4,6 @@ main.work section.intro {
 	margin-bottom: $p-spacing-largest;
 	padding-bottom: $p-spacing-largest;
 	
-	h1 {
-		margin: $p-spacing-default auto;
-		max-width: 800px;
-		text-align: center;
-		font-size: $p-font-size-title;
-		color: $cg-headline-text;
-		
-		&::after {
-			content: '';
-			display: block;
-			margin: $p-spacing-large auto;
-			width: 130px;
-			height: 1px;
-			background: $cg-headline-stroke-light;
-		}
-	}
-	
 	p {
 		margin-bottom: 0;
 		font-size: $p-font-size-h3;
