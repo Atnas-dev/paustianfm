@@ -1,0 +1,131 @@
+@import '../../../../sass_library/all';
+
+main.work section.references {
+	padding-top: $p-spacing-larger * 2;
+	padding-bottom: $p-spacing-largest * 2;
+	background: transparent;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background: $cp-work-references-background;
+		box-shadow: inset 0 1px 6px transparentize($cg-shadow, 0.4);
+	}
+
+	h2 {
+        color: $cg-text-dark;
+
+        &::after { background: $cg-headline-stroke-dark; }
+    }
+
+	.wrapper {
+	    ul {
+	        li {
+	            display: flex;
+	            box-sizing: border-box;
+	            width: 100%;
+                padding: $p-spacing-larger;
+	            border-radius: 8px;
+				box-shadow: 1px 4px 8px transparentize($cg-shadow, 0.6);
+	            background: $cp-work-references-tile-background;
+
+	            @include mq($mq2) {
+	                flex-direction: column;
+	            }
+
+	            &:not(:last-child) { margin-bottom: $p-spacing-default; }
+
+	            .client {
+	                flex: 0 0 (100%/4);
+	                display: flex;
+                    box-sizing: border-box;
+	                align-items: center;
+                    padding-right: $p-spacing-larger;
+
+                    @include mq($mq2) {
+                        flex-direction: column;
+                        padding-right: 0;
+                        padding-bottom: $p-spacing-larger;
+                    }
+
+	                img {
+	                    box-sizing: border-box;
+	                    width: 100%;
+	                    max-width: 200px;
+	                    object-fit: contain;
+                    }
+	            }
+
+				blockquote {
+					$quotes-offset: $p-spacing-small;
+
+	                flex: 0 0 (100%/4 * 3);
+                    box-sizing: border-box;
+					position: relative;
+                    padding-top: $quotes-offset;
+                    padding-bottom: $quotes-offset;
+
+                    &::before,
+                    &::after {
+                        $quotes-size: 56px;
+
+                        display: block;
+                        position: absolute;
+                        height: $quotes-size / 2;
+                        line-height: 1;
+                        font-size: $quotes-size;
+                        color: transparent;
+                        background: $cp-work-references-quotes;
+                        background-clip: text;
+                        -webkit-text-fill: transparent;
+                    }
+
+                    &::before {
+                        content: '“';
+                        top: -$quotes-offset * 3;
+                        left: -4px;
+                    }
+                    &::after {
+                        content: '”';
+                        right: -4px;
+                        bottom: -$quotes-offset * 3;
+                    }
+
+                    span:not(:last-of-type) {
+                        display: block;
+                        margin-bottom: $p-spacing-default;
+                    }
+
+                    .author {
+                        display: inline-block;
+                        position: relative;
+                        box-sizing: border-box;
+                        padding-top: $p-spacing-small;
+                        padding-left: 10px;
+                        border-top: 1px solid $cp-work-references-author;
+                        font-size: $p-font-size-minor;
+                        color: $cp-work-references-author;
+
+                        @include mq($mq2) {
+                            width: 100%;
+                        }
+
+                        &::before {
+                            content: '-';
+                            display: block;
+                            position: absolute;
+                            top: $p-spacing-small;
+                            left: 0;
+                            height: 1.16em;
+                        }
+                    }
+                }
+	        }
+	    }
+	}
+}

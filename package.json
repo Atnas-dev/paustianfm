@@ -22,7 +22,7 @@
     "scripts:vendor": "copyfiles -f node_modules/jquery/dist/jquery.min.js dist/libs-polyfills/jquery",
     "scripts:gtag": "copyfiles -f src/gtag.js dist",
     "assets": "npm run assets:copy && npm run icons && npm run meta",
-    "assets:copy": "copyfiles -f src/assets/*.* dist/assets && copyfiles -f src/assets/partners/*.* dist/assets/partners && copyfiles -f src/assets/patterns/*.* dist/assets/patterns",
+    "assets:copy": "copyfiles -f src/assets/*.* dist/assets && copyfiles -f src/assets/references/*.* dist/assets/references && copyfiles -f src/assets/patterns/*.* dist/assets/patterns",
     "icons": "npm run icons:copy && npm run icons-3d:copy",
     "icons:copy": "copyfiles -f src/assets/icons/*.svg dist/assets/icons",
     "icons-3d:copy": "copyfiles -f src/assets/icons/3d/*.svg dist/assets/icons/3d",
