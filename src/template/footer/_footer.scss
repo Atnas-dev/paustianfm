@@ -45,6 +45,8 @@ footer {
 				
 				@include mq($mq2) { font-size: $p-font-size-base; }
 				@include mq($mq3) { font-size: $p-font-size-minor; }
+
+				a { color: $cg-text-highlight; }
 			}
 			
 			a.button {
