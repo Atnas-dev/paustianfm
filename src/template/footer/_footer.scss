@@ -45,52 +45,6 @@ footer {
 				@include mq($mq3) { font-size: $p-font-size-minor; }
 			}
 			
-			form {
-				margin: $p-spacing-largest auto 0;
-				width: 100%;
-				max-width: 650px;
-				
-				fieldset {
-					margin-bottom: $p-spacing-default;
-					
-					div.grid {
-						display: grid;
-						grid-template-columns: repeat(2, 1fr);
-						grid-column-gap: $p-spacing-large;
-					}
-					
-					.field {
-						label { display: none; }
-						input {
-							box-sizing: border-box;
-							width: 100%;
-							outline: none;
-							border: none;
-							padding: $p-spacing-small $p-spacing-smaller;
-							border-radius: 4px;
-							background: $ct-footer-contact-input;
-							font-size: $p-font-size-major;
-						}
-					}
-				}
-				
-				button[type=submit] {
-					display: block;
-					box-sizing: border-box;
-					margin-top: $p-spacing-default;
-					width: 100%;
-					padding: $p-spacing-default;
-					border-radius: $p-spacing-large * 2;
-					font-size: $p-font-size-major;
-					color: $cg-text-dark;
-					transition: background-position $p-transition-time * 2;
-					background: $ct-footer-contact-button no-repeat left/200%;
-					text-align: center;
-					
-					&:hover { background-position: right; }
-				}
-			}
-			
 			a.button {
 				display: block;
 				box-sizing: border-box;
