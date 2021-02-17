@@ -107,3 +107,10 @@ $cp-benchmark-test-background:      $_cp-brighter;
 $cp-benchmark-test-divider:         $_cp-highlight;
 $cp-Benchmark-test-result-border:   $_cp-gradient-ltr;
 $cp-Benchmark-test-result-success:  $_cp-highlight;
+
+
+/** E-Learning page */
+$cp-e_learning-details-background:  $_cp-brightest;
+$cp-e_learning-details-border:      $_cp-main;
+$cp-e_learning-details-item-border: $_cp-dark;
+$cp-e_learning-details-button:      linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);

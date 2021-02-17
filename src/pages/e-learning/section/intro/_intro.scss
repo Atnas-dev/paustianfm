@@ -1,0 +1,103 @@
+@import '../../../../sass_library/all';
+
+main.e-learning section {
+	&:nth-of-type(odd) { background: $cp-benchmark-test-background; }
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		img.cats-logo {
+	        max-width: 300px;
+	        margin: 0 auto;
+
+	        @include mq($mq2) {
+	            order: -1;
+	            margin: $p-spacing-default auto $p-spacing-largest;
+	        }
+	    }
+
+		.description,
+		.details {
+			flex: 0 0 50%;
+
+			@include mq($mq2) {
+				flex: 0 0 100%;
+			}
+		}
+
+		.description p {
+			margin: 0 auto;
+			max-width: 600px;
+			letter-spacing: 1.1px;
+
+			@include mq($mq2) {
+				margin-bottom: $p-spacing-larger;
+			}
+
+			&:not(:last-of-type) { margin-bottom: $p-spacing-default; }
+
+			a { color: $cg-text-highlight; }
+		}
+
+		.details {
+			display: flex;
+            justify-content: flex-end;
+
+            @include mq($mq2) {
+	            justify-content: center;
+            }
+
+			ul {
+				width: 100%;
+				max-width: 280px;
+				border: 1px solid $cp-e_learning-details-border;
+				border-radius: 8px;
+				padding: $p-spacing-large $p-spacing-large ($p-spacing-large - $p-spacing-small);
+				background: $cp-e_learning-details-background;
+				box-shadow: 1px 4px 8px transparentize(black, 0.8);
+
+				li {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 $p-spacing-small $p-spacing-small;
+
+					&:not(:last-child) {
+				        margin-bottom: $p-spacing-default;
+	                    border-bottom: 1px solid $cp-e_learning-details-item-border;
+					}
+
+					h3 {
+						font-weight: bold;
+
+						&::after { content: ':'; }
+					}
+
+					span {
+						text-align: right;
+						color: $cg-text-highlight;
+					}
+
+					a {
+						display: block;
+	                    margin: $p-spacing-large auto $p-spacing-default;
+	                    width: 80%;
+	                    padding: $p-spacing-small;
+	                    box-sizing: border-box;
+	                    border-radius: $p-spacing-large * 2;
+	                    background: $cp-e_learning-details-button no-repeat left/200%;
+						box-shadow: 1px 4px 8px transparentize(black, 0.8);
+	                    color: $cg-text-dark;
+	                    text-align: center;
+	                    letter-spacing: 0.7px;
+	                    transition: background-position $p-transition-time * 2;
+
+	                    &:hover { background-position: right; }
+					}
+				}
+			}
+		}
+	}
+}
