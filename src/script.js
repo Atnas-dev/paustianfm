@@ -154,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// E-Learning
+// Studies
 document.addEventListener('DOMContentLoaded', () => {
-	const cmBookLink = document.querySelector('main.e-learning a.cm-book-link');
-	const cmBookSection = document.querySelector('main.e-learning section#cm-book');
+	const cmBookLink = document.querySelector('main.studies a.cm-book-link');
+	const cmBookSection = document.querySelector('main.studies section#cm-book');
 
 	if (! cmBookLink || ! cmBookSection) {
 		return;

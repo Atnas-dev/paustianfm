@@ -1,7 +1,11 @@
 @import '../../../../sass_library/all';
 
-main.e-learning section {
-	&:nth-of-type(odd) { background: $cp-benchmark-test-background; }
+main.studies {
+	background: $cp-benchmark-test-background;
+}
+
+main.studies section {
+	&:nth-of-type(even) { background: $cg-page-background; }
 
 	.wrapper {
 		display: flex;
@@ -18,6 +22,29 @@ main.e-learning section {
 	        }
 	    }
 
+	    .teaser {
+	        flex: 0 0 100%;
+
+	        h3 {
+	            margin: 0 auto $p-spacing-small;
+                max-width: 800px;
+                font-weight: bold;
+	        }
+
+	        ol {
+                margin: 0 auto $p-spacing-large;
+                max-width: 800px;
+
+                li {
+                    margin-left: 20px + $p-spacing-small;
+                    margin-bottom: $p-spacing-smaller;
+                    list-style-type: decimal;
+                }
+            }
+	    }
+
+	    h2 { flex: 0 0 100%; }
+
 		.description,
 		.details {
 			flex: 0 0 50%;
@@ -27,18 +54,39 @@ main.e-learning section {
 			}
 		}
 
-		.description p {
-			margin: 0 auto;
-			max-width: 600px;
-			letter-spacing: 1.1px;
+		.description {
+			> p {
+				margin: 0 auto;
+				max-width: 600px;
+				letter-spacing: 1.1px;
 
-			@include mq($mq2) {
-				margin-bottom: $p-spacing-larger;
+				@include mq($mq2) {
+					margin-bottom: $p-spacing-larger;
+				}
+
+				&:not(:last-child) { margin-bottom: $p-spacing-default; }
+				&:last-of-type:not(:last-child) { margin-bottom: $p-spacing-large; }
+
+				a { color: $cg-text-highlight; }
 			}
 
-			&:not(:last-of-type) { margin-bottom: $p-spacing-default; }
+			h3 {
+				font-size: $p-font-size-major;
+				font-weight: bold;
+				margin: 0 auto;
+			}
 
-			a { color: $cg-text-highlight; }
+			h4 {
+				margin-bottom: $p-spacing-default;
+                font-size: $p-font-size-minor;
+            }
+
+            ul li {
+                margin-left: 20px + $p-spacing-default;
+                width: 72px;
+                list-style: disc;
+                margin-top: $p-spacing-smaller;
+            }
 		}
 
 		.details {
@@ -52,10 +100,10 @@ main.e-learning section {
 			ul {
 				width: 100%;
 				max-width: 280px;
-				border: 1px solid $cp-e_learning-details-border;
+				border: 1px solid $cp-studies-details-border;
 				border-radius: 8px;
 				padding: $p-spacing-large $p-spacing-large ($p-spacing-large - $p-spacing-small);
-				background: $cp-e_learning-details-background;
+				background: $cp-studies-details-background;
 				box-shadow: 1px 4px 8px transparentize(black, 0.8);
 
 				li {
@@ -66,7 +114,7 @@ main.e-learning section {
 
 					&:not(:last-child) {
 				        margin-bottom: $p-spacing-default;
-	                    border-bottom: 1px solid $cp-e_learning-details-item-border;
+	                    border-bottom: 1px solid $cp-studies-details-item-border;
 					}
 
 					h3 {
@@ -87,7 +135,7 @@ main.e-learning section {
 	                    padding: $p-spacing-small;
 	                    box-sizing: border-box;
 	                    border-radius: $p-spacing-large * 2;
-	                    background: $cp-e_learning-details-button no-repeat left/200%;
+	                    background: $cp-studies-details-button no-repeat left/200%;
 						box-shadow: 1px 4px 8px transparentize(black, 0.8);
 	                    color: $cg-text-dark;
 	                    text-align: center;

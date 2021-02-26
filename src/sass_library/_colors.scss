@@ -92,6 +92,10 @@ $cp-home-competencies-model-divider:   $_cp-secondary-dark;
 $cp-home-quote-background: $_cp-main;
 
 
+/** Blog page */
+$cp-blog-links-background: $_cp-brighter;
+
+
 /** Work page */
 $cp-work-models-model-background:    $_cp-brighter;
 $cp-work-models-model-headline:      $_cp-secondary-dark;
@@ -109,8 +113,8 @@ $cp-Benchmark-test-result-border:   $_cp-gradient-ltr;
 $cp-Benchmark-test-result-success:  $_cp-highlight;
 
 
-/** E-Learning page */
-$cp-e_learning-details-background:  $_cp-brightest;
-$cp-e_learning-details-border:      $_cp-main;
-$cp-e_learning-details-item-border: $_cp-dark;
-$cp-e_learning-details-button:      linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);
+/** studies page */
+$cp-studies-details-background:  $_cp-brightest;
+$cp-studies-details-border:      $_cp-main;
+$cp-studies-details-item-border: $_cp-dark;
+$cp-studies-details-button:      linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);
