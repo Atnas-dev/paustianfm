@@ -6,7 +6,7 @@ main.blog section.links {
 		grid-template-columns: repeat(auto-fill, 265px);
 		grid-gap: $p-spacing-larger $p-spacing-default;
 		justify-content: space-around;
-		margin-top: $p-spacing-larger * 2;
+		margin-top: $p-spacing-larger;
 		
 		li {
 			padding: $p-spacing-default $p-spacing-small;

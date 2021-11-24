@@ -1,0 +1,151 @@
+@import '../../../../sass_library/all';
+
+main.studies {
+	background: $cp-benchmark-test-background;
+}
+
+main.studies section {
+	&:nth-of-type(even) { background: $cg-page-background; }
+
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		img.cats-logo {
+	        max-width: 300px;
+	        margin: 0 auto;
+
+	        @include mq($mq2) {
+	            order: -1;
+	            margin: $p-spacing-default auto $p-spacing-largest;
+	        }
+	    }
+
+	    .teaser {
+	        flex: 0 0 100%;
+
+	        h3 {
+	            margin: 0 auto $p-spacing-small;
+                max-width: 800px;
+                font-weight: bold;
+	        }
+
+	        ol {
+                margin: 0 auto $p-spacing-large;
+                max-width: 800px;
+
+                li {
+                    margin-left: 20px + $p-spacing-small;
+                    margin-bottom: $p-spacing-smaller;
+                    list-style-type: decimal;
+                }
+            }
+	    }
+
+	    h2 { flex: 0 0 100%; }
+
+		.description,
+		.details {
+			flex: 0 0 50%;
+
+			@include mq($mq2) {
+				flex: 0 0 100%;
+			}
+		}
+
+		.description {
+			> p {
+				margin: 0 auto;
+				max-width: 600px;
+				letter-spacing: 1.1px;
+
+				@include mq($mq2) {
+					margin-bottom: $p-spacing-larger;
+				}
+
+				&:not(:last-child) { margin-bottom: $p-spacing-default; }
+				&:last-of-type:not(:last-child) { margin-bottom: $p-spacing-large; }
+
+				a { color: $cg-text-highlight; }
+			}
+
+			h3 {
+				font-size: $p-font-size-major;
+				font-weight: bold;
+				margin: 0 auto;
+			}
+
+			h4 {
+				margin-bottom: $p-spacing-default;
+                font-size: $p-font-size-minor;
+            }
+
+            ul li {
+                margin-left: 20px + $p-spacing-default;
+                width: 112px;
+                list-style: disc;
+                margin-top: $p-spacing-smaller;
+            }
+		}
+
+		.details {
+			display: flex;
+            justify-content: flex-end;
+
+            @include mq($mq2) {
+	            justify-content: center;
+            }
+
+			ul {
+				width: 100%;
+				max-width: 280px;
+				border: 1px solid $cp-studies-details-border;
+				border-radius: 8px;
+				padding: $p-spacing-large $p-spacing-large ($p-spacing-large - $p-spacing-small);
+				background: $cp-studies-details-background;
+				box-shadow: 1px 4px 8px transparentize(black, 0.8);
+
+				li {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 $p-spacing-small $p-spacing-small;
+
+					&:not(:last-child) {
+				        margin-bottom: $p-spacing-default;
+	                    border-bottom: 1px solid $cp-studies-details-item-border;
+					}
+
+					h3 {
+						font-weight: bold;
+
+						&::after { content: ':'; }
+					}
+
+					span {
+						text-align: right;
+						color: $cg-text-highlight;
+					}
+
+					a {
+						display: block;
+	                    margin: $p-spacing-large auto $p-spacing-default;
+	                    width: 80%;
+	                    padding: $p-spacing-small;
+	                    box-sizing: border-box;
+	                    border-radius: $p-spacing-large * 2;
+	                    background: $cp-studies-details-button no-repeat left/200%;
+						box-shadow: 1px 4px 8px transparentize(black, 0.8);
+	                    color: $cg-text-dark;
+	                    text-align: center;
+	                    letter-spacing: 0.7px;
+	                    transition: background-position $p-transition-time * 2;
+
+	                    &:hover { background-position: right; }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+main.blog section.products {
+	background: $cp-blog-links-background;
+
+	p { margin-bottom: $p-spacing-small; }
+
+	a.button {
+		display: block;
+		box-sizing: border-box;
+		margin: 0 auto $p-spacing-largest;
+		width: 280px;
+		padding: $p-spacing-default;
+		border-radius: $p-spacing-large * 2;
+		background: $cp-home-competencies-button no-repeat left/200%;
+		text-align: center;
+		font-size: $p-font-size-minor;
+		color: $cg-text-dark;
+		transition: background-position $p-transition-time * 2;
+
+		&:hover { background-position: right; }
+	}
+}
+
+footer section.contact {
+	background: $cg-page-background !important;
+}

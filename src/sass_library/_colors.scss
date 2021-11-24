@@ -92,6 +92,10 @@ $cp-home-competencies-model-divider:   $_cp-secondary-dark;
 $cp-home-quote-background: $_cp-main;
 
 
+/** Blog page */
+$cp-blog-links-background: $_cp-brighter;
+
+
 /** Work page */
 $cp-work-models-model-background:    $_cp-brighter;
 $cp-work-models-model-headline:      $_cp-secondary-dark;
@@ -107,3 +111,10 @@ $cp-benchmark-test-background:      $_cp-brighter;
 $cp-benchmark-test-divider:         $_cp-highlight;
 $cp-Benchmark-test-result-border:   $_cp-gradient-ltr;
 $cp-Benchmark-test-result-success:  $_cp-highlight;
+
+
+/** studies page */
+$cp-studies-details-background:  $_cp-brightest;
+$cp-studies-details-border:      $_cp-main;
+$cp-studies-details-item-border: $_cp-dark;
+$cp-studies-details-button:      linear-gradient(118deg, $_cp-secondary-light, $_cp-secondary-dark);

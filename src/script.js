@@ -152,3 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
 });
+
+
+// Studies
+document.addEventListener('DOMContentLoaded', () => {
+	const cmBookLink = document.querySelector('main.studies a.cm-book-link');
+	const cmBookSection = document.querySelector('main.studies section#cm-book');
+
+	if (! cmBookLink || ! cmBookSection) {
+		return;
+	}
+
+	cmBookLink.addEventListener('click', (event) => {
+		event.preventDefault();
+		event.stopImmediatePropagation();
+
+		cmBookSection.scrollIntoView({behavior: "smooth"});
+	});
+});
