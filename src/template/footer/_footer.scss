@@ -88,6 +88,12 @@ footer {
 			> div {
 				display: flex;
 				margin-bottom: $p-spacing-small;
+
+				&.adr {
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
 				
 				h3 {
 					margin-right: $p-spacing-smaller;
@@ -96,7 +102,7 @@ footer {
 			
 			hr {
 				display: block;
-				height: 1em;
+				align-self: stretch;
 				margin: 0 $p-spacing-default $p-spacing-small;
 				background: $ct-footer-details-text;
 				
